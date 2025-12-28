@@ -78,6 +78,11 @@ android {
     compileSdk rootProject.ext.compileSdkVersion
 
     namespace "com.travelapps"
+
+    buildFeatures {
+        prefab true
+    }
+
     defaultConfig {
         applicationId "com.travelapps"
         minSdkVersion rootProject.ext.minSdkVersion
