@@ -1,6 +1,6 @@
 import { Dimensions, StyleSheet } from 'react-native';
 
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   //Container
@@ -11,11 +11,22 @@ const styles = StyleSheet.create({
   mainContainer: {
     width: width,
     height: height,
-    marginTop: 66.77,
+    marginTop: 50,
+    marginBottom: 75,
     borderRadius: 40,
     backgroundColor: '#FFFFFF',
+    alignItems: 'center',
   },
-  ButtonContainer: {
+  textContainer: {
+    width: width,
+    height: 250,
+    marginTop: 25,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
+  buttonContainer: {
+    position: 'absolute',
+    bottom: 100,
     width: 350,
     height: 60,
     alignSelf: 'center',
@@ -23,23 +34,43 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000',
     padding: 12,
     borderRadius: 30,
-    marginTop: 50,
-    marginBottom: 93,
+  },
+  indicator: {
+    width: 12,
+    height: 12,
+    marginHorizontal: 12,
+    backgroundColor: 'grey',
+    borderRadius: 12,
+    justifyContent: 'space-between',
+  },
+  indicatorContainer: {
+    position: 'absolute',
+    bottom: 40,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+  },
+  activeIndicator: {
+    width: 12,
+    height: 12,
+    backgroundColor: 'blue',
+    borderRadius: 12,
   },
   //Text
   HeaderText: {
     fontSize: 32,
     fontWeight: 'bold',
-    marginTop: 47,
-    marginBottom: 44,
+    height: 125,
     marginHorizontal: 56,
     textAlign: 'center',
+    textAlignVertical: 'center',
   },
   Text: {
     fontSize: 14,
     fontWeight: 'semibold',
     textAlign: 'center',
-    lineHeight: 24,
+    lineHeight: 20,
     marginHorizontal: 56,
   },
   //Images
