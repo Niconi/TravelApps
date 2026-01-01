@@ -14,6 +14,8 @@ function SignIn() {
         enableOnAndroid={true}
         enableAutomaticScroll={true}
         extraScrollHeight={80}
+        bounces={false}
+        overScrollMode="never"
       >
         <Image
           source={require('../../assets/images/auth/SignIn.png')}

@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     width: width,
-    minHeight: 416,
+    minHeight: height - 190,
+    marginTop: -60,
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
     backgroundColor: '#FFFFFF',
@@ -26,7 +27,8 @@ const styles = StyleSheet.create({
   //Image
   image:{
     width: 430,
-    height: 443,
+    height: 250,
+    resizeMode: 'contain',
   },
   //Text
   title:{
