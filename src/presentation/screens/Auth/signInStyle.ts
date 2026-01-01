@@ -10,8 +10,7 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     width: width,
-    minHeight: height - 200,
-    marginTop: 20,
+    minHeight: 416,
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
     backgroundColor: '#FFFFFF',

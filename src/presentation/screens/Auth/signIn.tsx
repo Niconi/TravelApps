@@ -8,7 +8,7 @@ function SignIn() {
   return (
     <View style={styles.container}>
       <KeyboardAwareScrollView
-        contentContainerStyle={{flexGrow: 1}}
+        contentContainerStyle={{ flexGrow: 1 }}
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
         enableOnAndroid={true}
@@ -24,9 +24,13 @@ function SignIn() {
             <Text style={styles.title}>Sign In</Text>
             <Text style={styles.text}>Please enter your account</Text>
           </View>
-          <InputField label="Email" placeholder="Email" />
-          <InputField label="Password" placeholder="Password" />
-          <Button label="Sign In" onPress={() => {}} />
+          <View>
+            <InputField label="Email" placeholder="Email" />
+            <InputField label="Password" placeholder="Password" />
+          </View>
+          <View>
+            <Button label="Sign In" onPress={() => {}} />
+          </View>
         </View>
       </KeyboardAwareScrollView>
     </View>
