@@ -13,8 +13,6 @@ const Button = ({ label, onPress }: ButtonProps) => {
 }
 const styles = StyleSheet.create({
 buttonContainer: {
-    position: 'absolute',
-    bottom: 100,
     width: 350,
     height: 60,
     alignSelf: 'center',
@@ -22,6 +20,7 @@ buttonContainer: {
     backgroundColor: '#000000',
     padding: 12,
     borderRadius: 30,
+    marginTop: 20,
   },
   ButtonText: {
     fontSize: 16,

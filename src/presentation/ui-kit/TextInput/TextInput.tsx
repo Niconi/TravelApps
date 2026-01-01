@@ -26,6 +26,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginTop: 6,
     marginBottom: 12,
+    paddingHorizontal: 15,
+    justifyContent: 'center',
   },
   labelText: {
     fontSize: 16,

@@ -9,12 +9,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#1A8EEA',
   },
   mainContainer: {
+    flex: 1,
     width: width,
-    height: height * 0.5,
     marginTop: 20,
     borderRadius: 40,
     backgroundColor: '#FFFFFF',
     alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 30,
+    height: height,
   },
   textContainer:{
     width: 370,
