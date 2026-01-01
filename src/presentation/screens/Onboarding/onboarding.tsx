@@ -50,7 +50,7 @@ function Onboarding() {
           )}
         />
       </View>
-      <Button label={onboardingText[currentIndex].ButtonText} onPress={goToNextSlide} />
+      <Button label={onboardingText[currentIndex].ButtonText} onPress={goToNextSlide} absolute={true} />
       <View style={styles.indicatorContainer}>
         {onboardingText.map((_, index) => (
           <View
