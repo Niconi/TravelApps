@@ -2,9 +2,9 @@ import { Text, View, Image, TouchableOpacity, FlatList } from 'react-native';
 import { useRef, useState } from 'react';
 import { Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import SignIn from '../Auth/signIn';
 import styles from './onboardingStyle';
-import onboardingText from '../../data/onboardingText';
+import onboardingText from '../../../data/onboardingText';
+import Button from '../../ui-kit/Button/Button';
 
 function Onboarding() {
   const navigation = useNavigation();
@@ -36,7 +36,6 @@ function Onboarding() {
       <Image source={onboardingText[currentIndex].Image} style={styles.Image} />
       <View style={styles.mainContainer}>
         <FlatList
-        
           ref={ref}
           onMomentumScrollEnd={updateCurrentIndex}
           data={onboardingText}
@@ -51,11 +50,7 @@ function Onboarding() {
           )}
         />
       </View>
-      <TouchableOpacity style={styles.buttonContainer} onPress={goToNextSlide}>
-        <Text style={styles.ButtonText}>
-          {onboardingText[currentIndex].ButtonText}
-        </Text>
-      </TouchableOpacity>
+      <Button label={onboardingText[currentIndex].ButtonText} onPress={goToNextSlide} />
       <View style={styles.indicatorContainer}>
         {onboardingText.map((_, index) => (
           <View

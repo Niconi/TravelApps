@@ -24,17 +24,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
-  buttonContainer: {
-    position: 'absolute',
-    bottom: 100,
-    width: 350,
-    height: 60,
-    alignSelf: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#000000',
-    padding: 12,
-    borderRadius: 30,
-  },
   indicator: {
     width: 12,
     height: 12,
@@ -79,13 +68,6 @@ const styles = StyleSheet.create({
     height: 300,
     alignSelf: 'center',
     marginTop: 50,
-  },
-  //Button
-  ButtonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#FFFFFF',
   },
 });
 

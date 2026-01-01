@@ -1,5 +1,5 @@
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Onboarding from '../screens/Onboarding/onboarding';
 import SignIn from '../screens/Auth/signIn';
 import { useEffect, useState } from 'react';
@@ -26,11 +26,13 @@ function MainNavigation() {
     isFirstLaunch != null && (
       <NavigationContainer>
         <Stack.Navigator>
-          {isFirstLaunch && (<Stack.Screen
-            name="Onboarding"
-            component={Onboarding}
-            options={{ headerShown: false }}
-          />)}
+          {isFirstLaunch && (
+            <Stack.Screen
+              name="Onboarding"
+              component={Onboarding}
+              options={{ headerShown: false }}
+            />
+          )}
           <Stack.Screen
             name="SignIn"
             component={SignIn}
