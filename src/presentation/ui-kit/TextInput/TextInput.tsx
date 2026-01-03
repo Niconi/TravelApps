@@ -1,15 +1,16 @@
 import { Text, TextInput, View, StyleSheet } from 'react-native';
 
 type InputFieldProp = {
-  label: string;
+  label?: string;
   placeholder: string;
+  size: number,
 };
 
-const InputField = ({ label, placeholder }: InputFieldProp) => {
+const InputField = ({ label, placeholder, size }: InputFieldProp) => {
   return (
     <View>
       <Text style={styles.labelText}>{label}</Text>
-      <View style={styles.container}>
+      <View style={[styles.container, {width: size}]}>
         <TextInput placeholder={placeholder} style={styles.inputText} />
       </View>
     </View>

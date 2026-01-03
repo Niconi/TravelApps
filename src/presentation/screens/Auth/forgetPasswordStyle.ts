@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     width: width,
-    height: 600,
+    height: 645,
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
     backgroundColor: '#FFFFFF',
@@ -37,8 +37,10 @@ const styles = StyleSheet.create({
   },
   //Image
   image:{
-    width: 430,
-    height: 443,
+    width: 308,
+    height: 205,
+    alignSelf: 'center',
+    marginTop: 20,
   },
   line:{
     width: 150,

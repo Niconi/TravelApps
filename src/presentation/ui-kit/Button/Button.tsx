@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, StyleSheet, View } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet} from 'react-native';
 
 type ButtonProps = {
   label?: string;
@@ -8,11 +8,8 @@ type ButtonProps = {
 
 const Button = ({ label, onPress, absolute = false }: ButtonProps) => {
   return (
-    <TouchableOpacity 
-      style={[
-        styles.buttonContainer, 
-        absolute && styles.absolutePosition
-      ]} 
+    <TouchableOpacity
+      style={[styles.buttonContainer, absolute && styles.absolutePosition]}
       onPress={onPress}
     >
       <Text style={styles.ButtonText}>{label}</Text>
@@ -40,6 +37,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#FFFFFF',
+  },
+  TouchableText: {
+    fontSize: 12,
+    fontWeight: 'regular',
+    marginBottom: 14,
   },
 });
 

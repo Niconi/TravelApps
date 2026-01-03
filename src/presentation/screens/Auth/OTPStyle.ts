@@ -37,8 +37,10 @@ const styles = StyleSheet.create({
   },
   //Image
   image:{
-    width: 430,
-    height: 443,
+    width: 250,
+    height: 210,
+    alignSelf: 'center',
+
   },
   line:{
     width: 150,

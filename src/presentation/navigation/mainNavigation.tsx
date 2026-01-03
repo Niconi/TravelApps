@@ -2,6 +2,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Onboarding from '../screens/Onboarding/onboarding';
 import SignIn from '../screens/Auth/signIn';
+import SignUp from '../screens/Auth/signUp';
+import ForgetPassword from '../screens/Auth/forgetPassword';
+import OTP from '../screens/Auth/OTP';
+import Dashboard from '../screens/Main/dashboard';
 import { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -36,6 +40,26 @@ function MainNavigation() {
           <Stack.Screen
             name="SignIn"
             component={SignIn}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="SignUp"
+            component={SignUp}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ForgetPassword"
+            component={ForgetPassword}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="OTP"
+            component={OTP}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Dashboard"
+            component={Dashboard}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
