@@ -1,15 +1,20 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Onboarding from '../screens/Onboarding/onboarding';
 import SignIn from '../screens/Auth/signIn';
 import SignUp from '../screens/Auth/signUp';
 import ForgetPassword from '../screens/Auth/forgetPassword';
 import OTP from '../screens/Auth/OTP';
-import Dashboard from '../screens/Main/dashboard';
+import Home from '../screens/Main/home';
+import HomeIcon from '../assets/images/home/home.svg';
+import Wishlist from '../screens/Wishlist/wishlist';
+import WishlistIcon from '../assets/images/home/wishlist.svg';
 import { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 function MainNavigation() {
   const [isFirstLaunch, setIsFirstLaunch] = useState<boolean | null>(null);
@@ -58,13 +63,54 @@ function MainNavigation() {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="Dashboard"
-            component={Dashboard}
+            name="HomeStack"
+            component={HomeStack}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
       </NavigationContainer>
     )
+  );
+}
+
+function HomeStack() {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: 'white',
+        tabBarInactiveTintColor: 'grey',
+        tabBarStyle: {
+          flexDirection: 'row',
+          width: '100%',
+          height: 65,
+          backgroundColor: 'black',
+        },
+        tabBarLabelStyle: {
+          fontSize: 10,
+          fontWeight: 'medium',
+        },
+        tabBarIconStyle: {
+          width: 35,
+          height: 35,
+        },
+      }}
+    >
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarIcon: ({ size, color }) => <HomeIcon width={size} height={size} stroke={color} />,
+        }}
+      />
+      <Tab.Screen
+        name="Wishlist"
+        component={Wishlist}
+        options={{
+          tabBarIcon: ({ size, color }) => <WishlistIcon width={size} height={size} stroke={color}/>,
+        }}
+      />
+    </Tab.Navigator>
   );
 }
 

@@ -1,5 +1,5 @@
 import { View, Text, ScrollView } from 'react-native';
-import styles from './dasboardStyle';
+import styles from './homeStyle';
 import ButtonIcon from '../../ui-kit/Button/ButtonIcon/ButtonIcon';
 import TextInput from '../../ui-kit/TextInput/TextInput';
 import TouchableText from '../../ui-kit/Button/ButtonText';
@@ -9,7 +9,7 @@ import PromoContainer from '../../ui-kit/Container/PromoContainer';
 import Location from '../../ui-kit/Container/Location';
 import Article from '../../ui-kit/Container/Article';
 
-function Dashboard() {
+function Home() {
   return (
     <ScrollView
       style={styles.container}
@@ -166,4 +166,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Home;

@@ -42,7 +42,10 @@ function SignIn() {
                 onPress={() => navigation.navigate('ForgetPassword')}
                 align="flex-end"
               />
-              <Button label="Sign In" onPress={() => navigation.navigate('Dashboard')} />
+              <Button
+                label="Sign In"
+                onPress={() => navigation.navigate('HomeStack')}
+              />
               <View style={styles.lineContainer}>
                 <View style={styles.line} />
                 <Text style={styles.text}>Or</Text>
@@ -68,7 +71,9 @@ function SignIn() {
               </View>
               <TouchableText
                 label="Don't have an account? Sign Up"
-                onPress={() => {navigation.navigate('SignUp')}}
+                onPress={() => {
+                  navigation.navigate('SignUp');
+                }}
                 align="center"
               />
             </View>
