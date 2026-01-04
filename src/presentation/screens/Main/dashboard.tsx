@@ -3,11 +3,19 @@ import styles from './dasboardStyle';
 import ButtonIcon from '../../ui-kit/Button/ButtonIcon/ButtonIcon';
 import TextInput from '../../ui-kit/TextInput/TextInput';
 import TouchableText from '../../ui-kit/Button/ButtonText';
-import CustomImageBackground from '../../ui-kit/Image/ImageBackground';
+import PopularContainer from '../../ui-kit/Container/PopularContainer';
+import RecommendedContainer from '../../ui-kit/Container/RecommendedContainer';
+import PromoContainer from '../../ui-kit/Container/PromoContainer';
+import Location from '../../ui-kit/Container/Location';
+import Article from '../../ui-kit/Container/Article';
 
 function Dashboard() {
   return (
-    <View style={styles.container}>
+    <ScrollView
+      style={styles.container}
+      showsVerticalScrollIndicator={false}
+      bounces={false}
+    >
       <View style={styles.headerContainer}>
         <View>
           <Text style={styles.headerText}>Your Location</Text>
@@ -30,25 +38,131 @@ function Dashboard() {
           />
         </View>
       </View>
-      <TextInput placeholder="Search" size={350} />
+      <TextInput placeholder="Search" size={350} marginHorizontal={30} />
       <View>
         <View style={styles.popularTextContainer}>
           <Text style={styles.titleText}>Popular Nearby</Text>
           <TouchableText label="See All" onPress={() => {}} align="flex-end" />
         </View>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <View style={styles.popularContainer}>
-            <CustomImageBackground
-              source={require('../../assets/images/home/Semeru.png')}
-              width={232}
-              height={195}
-            />
-            <Text style={styles.destinationName}>Semeru Mountain</Text>
-            <Text style={styles.destinationLocation}>Malang, East Java</Text>
-          </View>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          bounces={false}
+        >
+          <PopularContainer
+            name="Semeru Mountain"
+            location="Malang, East Java"
+            image={require('../../assets/images/home/Semeru.png')}
+          />
+          <PopularContainer
+            name="Semeru Mountain"
+            location="Malang, East Java"
+            image={require('../../assets/images/home/Semeru.png')}
+          />
+          <PopularContainer
+            name="Semeru Mountain"
+            location="Malang, East Java"
+            image={require('../../assets/images/home/Semeru.png')}
+          />
+          <PopularContainer
+            name="Semeru Mountain"
+            location="Malang, East Java"
+            image={require('../../assets/images/home/Semeru.png')}
+          />
+          <PopularContainer
+            name="Semeru Mountain"
+            location="Malang, East Java"
+            image={require('../../assets/images/home/Semeru.png')}
+          />
         </ScrollView>
       </View>
-    </View>
+      <View>
+        <View style={styles.titleTextContainer}>
+          <Text style={styles.titleText}>Recommended</Text>
+          <TouchableText label="See All" onPress={() => {}} align="flex-end" />
+        </View>
+        <ScrollView bounces={false}>
+          <RecommendedContainer
+            name="Kerinci Mountain"
+            type="Hiking"
+            location="Solok, Jambi"
+            image={require('../../assets/images/home/Kerinci.png')}
+          />
+          <RecommendedContainer
+            name="Kerinci Mountain"
+            type="Hiking"
+            location="Solok, Jambi"
+            image={require('../../assets/images/home/Kerinci.png')}
+          />
+          <RecommendedContainer
+            name="Kerinci Mountain"
+            type="Hiking"
+            location="Solok, Jambi"
+            image={require('../../assets/images/home/Kerinci.png')}
+          />
+          <RecommendedContainer
+            name="Kerinci Mountain"
+            type="Hiking"
+            location="Solok, Jambi"
+            image={require('../../assets/images/home/Kerinci.png')}
+          />
+        </ScrollView>
+      </View>
+      <View>
+        <View style={styles.titleTextContainer}>
+          <Text style={styles.titleText}>Promo Partner</Text>
+          <TouchableText label="See All" onPress={() => {}} align="flex-end" />
+        </View>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          bounces={false}
+        >
+          <PromoContainer
+            source={require('../../assets/images/home/Promo.png')}
+          />
+        </ScrollView>
+      </View>
+      <View>
+        <View style={styles.titleTextContainer}>
+          <Text style={styles.titleText}>Location</Text>
+          <TouchableText label="See All" onPress={() => {}} align="flex-end" />
+        </View>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          bounces={false}
+        >
+          <Location
+            source={require('../../assets/images/home/CentralJava.png')}
+          />
+          <Location
+            source={require('../../assets/images/home/CentralJava.png')}
+          />
+          <Location
+            source={require('../../assets/images/home/CentralJava.png')}
+          />
+        </ScrollView>
+      </View>
+      <View>
+        <View style={styles.titleTextContainer}>
+          <Text style={styles.titleText}>Article</Text>
+          <TouchableText label="See All" onPress={() => {}} align="flex-end" />
+        </View>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          bounces={false}
+        >
+        <Article source={require('../../assets/images/home/MerapiMountArticle.png')}
+        name="Merapi Mountain erupt again" author="Adams" date="9 Dec 2023"/>
+        <Article source={require('../../assets/images/home/MerapiMountArticle.png')}
+        name="Merapi Mountain erupt again" author="Adams" date="9 Dec 2023"/>
+        <Article source={require('../../assets/images/home/MerapiMountArticle.png')}
+        name="Merapi Mountain erupt again" author="Adams" date="9 Dec 2023"/>
+        </ScrollView>
+      </View>
+    </ScrollView>
   );
 }
 

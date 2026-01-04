@@ -5,12 +5,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    padding: 30,
   },
   headerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    marginHorizontal: 30,
+    marginTop: 30,
   },
   headerIconContainer: {
     flexDirection: 'row',
@@ -20,17 +21,13 @@ const styles = StyleSheet.create({
   popularTextContainer:{
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginHorizontal: 30,
   },
-  popularContainer:{
-    width: 242,
-    height: 277,
+  titleTextContainer:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginHorizontal: 30,
     marginTop: 20,
-    marginBottom: 30,
-    borderColor: 'grey',
-    borderWidth: 1,
-    borderRadius: 20,
-    padding: 4,
-    alignContent: 'center',
   },
   //Text
   headerText: {
@@ -45,14 +42,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'semibold',
   },
-  destinationName: {
+  recommendedName: {
     fontSize: 14,
     fontWeight: 'medium',
     marginTop: 14,
     marginBottom: 5,
     marginHorizontal: 15,
   },
-  destinationLocation:{
+  recommendedLocation:{
     fontSize: 10,
     fontWeight: 'light',
     marginBottom: 23,

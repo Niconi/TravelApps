@@ -4,14 +4,15 @@ type InputFieldProp = {
   label?: string;
   placeholder: string;
   size: number,
+  marginHorizontal?: number,
 };
 
-const InputField = ({ label, placeholder, size }: InputFieldProp) => {
+const InputField = ({ label, placeholder, size, marginHorizontal }: InputFieldProp) => {
   return (
     <View>
       <Text style={styles.labelText}>{label}</Text>
-      <View style={[styles.container, {width: size}]}>
-        <TextInput placeholder={placeholder} style={styles.inputText} />
+      <View style={[styles.container, {width: size, marginHorizontal: marginHorizontal}]}>
+        <TextInput placeholder={placeholder} style={styles.inputText} placeholderTextColor="#9a9a9a" />
       </View>
     </View>
   );
