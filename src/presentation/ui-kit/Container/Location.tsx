@@ -1,11 +1,16 @@
-import { Image, StyleSheet } from 'react-native';
+import { Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 type LocationProp = {
   source: any;
+  onPress: () => void;
 };
 
-const Location = ({ source }: LocationProp) => {
-  return <Image source={source} style={[styles.image]} />;
+const Location = ({ source, onPress }: LocationProp) => {
+  return (
+    <TouchableOpacity onPress={onPress}>
+      <Image source={source} style={[styles.image]} />
+    </TouchableOpacity>
+  );
 };
 
 const styles = StyleSheet.create({

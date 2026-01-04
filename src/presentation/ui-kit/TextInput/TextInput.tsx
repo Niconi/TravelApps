@@ -1,18 +1,33 @@
 import { Text, TextInput, View, StyleSheet } from 'react-native';
+import SearchIcon from '../images/home/search.svg';
 
 type InputFieldProp = {
   label?: string;
   placeholder: string;
-  size: number,
-  marginHorizontal?: number,
+  size: number;
+  marginHorizontal?: number;
 };
 
-const InputField = ({ label, placeholder, size, marginHorizontal }: InputFieldProp) => {
+const InputField = ({
+  label,
+  placeholder,
+  size,
+  marginHorizontal,
+}: InputFieldProp) => {
   return (
     <View>
       <Text style={styles.labelText}>{label}</Text>
-      <View style={[styles.container, {width: size, marginHorizontal: marginHorizontal}]}>
-        <TextInput placeholder={placeholder} style={styles.inputText} placeholderTextColor="#9a9a9a" />
+      <View
+        style={[
+          styles.container,
+          { width: size, marginHorizontal: marginHorizontal },
+        ]}
+      >
+        <TextInput
+          placeholder={placeholder}
+          style={styles.inputText}
+          placeholderTextColor="#9a9a9a"
+        />
       </View>
     </View>
   );
@@ -29,7 +44,7 @@ const styles = StyleSheet.create({
     marginTop: 6,
     marginBottom: 12,
     paddingHorizontal: 15,
-    justifyContent: 'center',
+    flexDirection: 'row',
   },
   labelText: {
     fontSize: 16,

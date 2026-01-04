@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 import CustomImage from '../Image/Images';
 
 type RecommendedContainerProp = {
@@ -6,6 +6,7 @@ type RecommendedContainerProp = {
   type: string;
   location: string;
   image: string;
+  onPress: () => void;
 };
 
 const RecommendedContainer = ({
@@ -13,16 +14,17 @@ const RecommendedContainer = ({
   type,
   location,
   image,
+  onPress,
 }: RecommendedContainerProp) => {
   return (
-    <View style={styles.recommendedContainer}>
+    <TouchableOpacity style={styles.recommendedContainer} onPress={onPress}>
       <CustomImage source={image} width={68} height={74} />
       <View>
         <Text style={styles.recommendedName}>{name}</Text>
         <Text style={styles.recommendedType}>{type}</Text>
         <Text style={styles.recommendedLocation}>{location}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

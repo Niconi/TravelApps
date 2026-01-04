@@ -10,6 +10,11 @@ import Home from '../screens/Main/home';
 import HomeIcon from '../assets/images/home/home.svg';
 import Wishlist from '../screens/Wishlist/wishlist';
 import WishlistIcon from '../assets/images/home/wishlist.svg';
+import Notification from '../screens/Notification/notification';
+import NotificationIcon from '../assets/images/home/notification.svg';
+import Profile from '../screens/Profile/profile';
+import ProfileIcon from '../assets/images/home/profile.svg';
+import DestinationOps from '../screens/DestinationOps/destinationOps';
 import { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -43,33 +48,62 @@ function MainNavigation() {
             />
           )}
           <Stack.Screen
-            name="SignIn"
-            component={SignIn}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="SignUp"
-            component={SignUp}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="ForgetPassword"
-            component={ForgetPassword}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="OTP"
-            component={OTP}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="HomeStack"
-            component={HomeStack}
+            name="AuthStack"
+            component={AuthStack}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
       </NavigationContainer>
     )
+  );
+}
+
+function AuthStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="SignIn"
+        component={SignIn}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SignUp"
+        component={SignUp}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ForgetPassword"
+        component={ForgetPassword}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="OTP"
+        component={OTP}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="HomeStack"
+        component={HomeStack}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="DestinationOpsStack"
+        component={DestinationOpsStack}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+function DestinationOpsStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="DestinationOps"
+        component={DestinationOps}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
   );
 }
 
@@ -100,14 +134,36 @@ function HomeStack() {
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: ({ size, color }) => <HomeIcon width={size} height={size} stroke={color} />,
+          tabBarIcon: ({ size, color }) => (
+            <HomeIcon width={size} height={size} stroke={color} />
+          ),
         }}
       />
       <Tab.Screen
         name="Wishlist"
         component={Wishlist}
         options={{
-          tabBarIcon: ({ size, color }) => <WishlistIcon width={size} height={size} stroke={color}/>,
+          tabBarIcon: ({ size, color }) => (
+            <WishlistIcon width={size} height={size} stroke={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Notification"
+        component={Notification}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <NotificationIcon width={size} height={size} stroke={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <ProfileIcon width={size} height={size} stroke={color} />
+          ),
         }}
       />
     </Tab.Navigator>

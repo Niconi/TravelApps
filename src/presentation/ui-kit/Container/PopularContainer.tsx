@@ -1,15 +1,16 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import CustomImageBackground from '..//Image/ImageBackground';
 
 type PopularContainerProp = {
     name: string,
     location: string,
     image: string,
+    onPress: () => void,
 };
 
-const PopularContainer = ({name, location, image}: PopularContainerProp) => {
+const PopularContainer = ({name, location, image, onPress}: PopularContainerProp) => {
   return (
-    <View style={styles.popularContainer}>
+    <TouchableOpacity style={styles.popularContainer} onPress={onPress}>
       <CustomImageBackground
         source={image}
         width={232}
@@ -17,7 +18,7 @@ const PopularContainer = ({name, location, image}: PopularContainerProp) => {
       />
       <Text style={styles.popularName}>{name}</Text>
       <Text style={styles.popularLocation}>{location}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 

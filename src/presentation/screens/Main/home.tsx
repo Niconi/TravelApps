@@ -8,8 +8,10 @@ import RecommendedContainer from '../../ui-kit/Container/RecommendedContainer';
 import PromoContainer from '../../ui-kit/Container/PromoContainer';
 import Location from '../../ui-kit/Container/Location';
 import Article from '../../ui-kit/Container/Article';
+import { useNavigation } from '@react-navigation/native';
 
 function Home() {
+  const navigation = useNavigation();
   return (
     <ScrollView
       style={styles.container}
@@ -53,26 +55,31 @@ function Home() {
             name="Semeru Mountain"
             location="Malang, East Java"
             image={require('../../assets/images/home/Semeru.png')}
+            onPress={() => navigation.navigate('DestinationOpsStack')}
           />
           <PopularContainer
             name="Semeru Mountain"
             location="Malang, East Java"
             image={require('../../assets/images/home/Semeru.png')}
+            onPress={() => {}}
           />
           <PopularContainer
             name="Semeru Mountain"
             location="Malang, East Java"
             image={require('../../assets/images/home/Semeru.png')}
+            onPress={() => {}}
           />
           <PopularContainer
             name="Semeru Mountain"
             location="Malang, East Java"
             image={require('../../assets/images/home/Semeru.png')}
+            onPress={() => {}}
           />
           <PopularContainer
             name="Semeru Mountain"
             location="Malang, East Java"
             image={require('../../assets/images/home/Semeru.png')}
+            onPress={() => {}}
           />
         </ScrollView>
       </View>
@@ -87,24 +94,28 @@ function Home() {
             type="Hiking"
             location="Solok, Jambi"
             image={require('../../assets/images/home/Kerinci.png')}
+            onPress={() => {}}
           />
           <RecommendedContainer
             name="Kerinci Mountain"
             type="Hiking"
             location="Solok, Jambi"
             image={require('../../assets/images/home/Kerinci.png')}
+            onPress={() => {}}
           />
           <RecommendedContainer
             name="Kerinci Mountain"
             type="Hiking"
             location="Solok, Jambi"
             image={require('../../assets/images/home/Kerinci.png')}
+            onPress={() => {}}
           />
           <RecommendedContainer
             name="Kerinci Mountain"
             type="Hiking"
             location="Solok, Jambi"
             image={require('../../assets/images/home/Kerinci.png')}
+            onPress={() => {}}
           />
         </ScrollView>
       </View>
@@ -120,6 +131,7 @@ function Home() {
         >
           <PromoContainer
             source={require('../../assets/images/home/Promo.png')}
+            onPress={() => {}}
           />
         </ScrollView>
       </View>
@@ -135,12 +147,15 @@ function Home() {
         >
           <Location
             source={require('../../assets/images/home/CentralJava.png')}
+            onPress={() => {}}
           />
           <Location
             source={require('../../assets/images/home/CentralJava.png')}
+            onPress={() => {}}
           />
           <Location
             source={require('../../assets/images/home/CentralJava.png')}
+            onPress={() => {}}
           />
         </ScrollView>
       </View>
@@ -154,12 +169,27 @@ function Home() {
           showsHorizontalScrollIndicator={false}
           bounces={false}
         >
-        <Article source={require('../../assets/images/home/MerapiMountArticle.png')}
-        name="Merapi Mountain erupt again" author="Adams" date="9 Dec 2023"/>
-        <Article source={require('../../assets/images/home/MerapiMountArticle.png')}
-        name="Merapi Mountain erupt again" author="Adams" date="9 Dec 2023"/>
-        <Article source={require('../../assets/images/home/MerapiMountArticle.png')}
-        name="Merapi Mountain erupt again" author="Adams" date="9 Dec 2023"/>
+          <Article
+            source={require('../../assets/images/home/MerapiMountArticle.png')}
+            name="Merapi Mountain erupt again"
+            author="Adams"
+            date="9 Dec 2023"
+            onPress={() => {}}
+          />
+          <Article
+            source={require('../../assets/images/home/MerapiMountArticle.png')}
+            name="Merapi Mountain erupt again"
+            author="Adams"
+            date="9 Dec 2023"
+            onPress={() => {}}
+          />
+          <Article
+            source={require('../../assets/images/home/MerapiMountArticle.png')}
+            name="Merapi Mountain erupt again"
+            author="Adams"
+            date="9 Dec 2023"
+            onPress={() => {}}
+          />
         </ScrollView>
       </View>
     </ScrollView>

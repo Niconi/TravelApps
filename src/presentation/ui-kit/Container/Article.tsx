@@ -1,20 +1,21 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 type ArticleProp = {
   source: any;
   name: string;
   author: string;
   date: string;
+  onPress: () => void;
 };
 
-const Article = ({ source, name, author, date }: ArticleProp) => {
+const Article = ({ source, name, author, date, onPress }: ArticleProp) => {
   return (
-    <View style={[styles.container]}>
+    <TouchableOpacity style={[styles.container]} onPress={onPress}>
       <Image source={source} style={[styles.image]} />
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.author}>{author}</Text>
       <Text style={styles.date}>{date}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -42,7 +43,12 @@ const styles = StyleSheet.create({
     marginTop: 11,
   },
   author: { fontSize: 12, fontWeight: 'regular', marginHorizontal: 15 },
-  date: { fontSize: 9, fontWeight: 'regular', marginHorizontal: 15, marginTop: 11, },
+  date: {
+    fontSize: 9,
+    fontWeight: 'regular',
+    marginHorizontal: 15,
+    marginTop: 11,
+  },
 });
 
 export default Article;

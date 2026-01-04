@@ -1,11 +1,16 @@
-import { Image, StyleSheet } from 'react-native';
+import { Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 type PromoContainerProp = {
   source: any;
+  onPress: () => void;
 };
 
-const PromoContainer = ({ source }: PromoContainerProp) => {
-  return <Image source={source} style={[styles.image]} />;
+const PromoContainer = ({ source, onPress }: PromoContainerProp) => {
+  return (
+    <TouchableOpacity onPress={onPress}>
+      <Image source={source} style={[styles.image]} />
+    </TouchableOpacity>
+  );
 };
 
 const styles = StyleSheet.create({
