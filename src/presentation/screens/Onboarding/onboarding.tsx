@@ -28,7 +28,7 @@ function Onboarding() {
     }
   };
   const goToAuth = () => {
-    navigation.navigate('SignIn');
+    navigation.navigate('AuthStack');
   };
   const ref = useRef<FlatList>(null);
   return (

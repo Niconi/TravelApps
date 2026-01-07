@@ -1,5 +1,5 @@
 import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
-import CustomImage from '../Image/Images';
+import CustomImage from '../../Image/Images';
 
 type RecommendedContainerProp = {
   name: string;

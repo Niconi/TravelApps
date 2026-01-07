@@ -1,21 +1,24 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import CustomImageBackground from '..//Image/ImageBackground';
+import CustomImageBackground from '../../Image/ImageBackground';
 
 type PopularContainerProp = {
-    name: string,
-    location: string,
-    image: string,
-    onPress: () => void,
+  name: string;
+  location: string;
+  image: string;
+  type: string;
+  onPress: () => void;
 };
 
-const PopularContainer = ({name, location, image, onPress}: PopularContainerProp) => {
+const PopularContainer = ({
+  name,
+  location,
+  image,
+  type,
+  onPress,
+}: PopularContainerProp) => {
   return (
     <TouchableOpacity style={styles.popularContainer} onPress={onPress}>
-      <CustomImageBackground
-        source={image}
-        width={232}
-        height={195}
-      />
+      <CustomImageBackground source={image} width={232} height={195} text={type} />
       <Text style={styles.popularName}>{name}</Text>
       <Text style={styles.popularLocation}>{location}</Text>
     </TouchableOpacity>
@@ -41,7 +44,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     marginHorizontal: 15,
   },
-  popularLocation:{
+  popularLocation: {
     fontSize: 10,
     fontWeight: 'light',
     marginBottom: 23,

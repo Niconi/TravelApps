@@ -3,11 +3,11 @@ import styles from './homeStyle';
 import ButtonIcon from '../../ui-kit/Button/ButtonIcon/ButtonIcon';
 import TextInput from '../../ui-kit/TextInput/TextInput';
 import TouchableText from '../../ui-kit/Button/ButtonText';
-import PopularContainer from '../../ui-kit/Container/PopularContainer';
-import RecommendedContainer from '../../ui-kit/Container/RecommendedContainer';
-import PromoContainer from '../../ui-kit/Container/PromoContainer';
-import Location from '../../ui-kit/Container/Location';
-import Article from '../../ui-kit/Container/Article';
+import PopularContainer from '../../ui-kit/Container/HomeContainer/PopularContainer';
+import RecommendedContainer from '../../ui-kit/Container/HomeContainer/RecommendedContainer';
+import PromoContainer from '../../ui-kit/Container/HomeContainer/PromoContainer';
+import Location from '../../ui-kit/Container/HomeContainer/Location';
+import Article from '../../ui-kit/Container/HomeContainer/Article';
 import { useNavigation } from '@react-navigation/native';
 
 function Home() {
@@ -55,30 +55,35 @@ function Home() {
             name="Semeru Mountain"
             location="Malang, East Java"
             image={require('../../assets/images/home/Semeru.png')}
+            type="Hiking"
             onPress={() => navigation.navigate('DestinationOpsStack')}
           />
           <PopularContainer
             name="Semeru Mountain"
             location="Malang, East Java"
             image={require('../../assets/images/home/Semeru.png')}
+            type="Hiking"
             onPress={() => {}}
           />
           <PopularContainer
             name="Semeru Mountain"
             location="Malang, East Java"
             image={require('../../assets/images/home/Semeru.png')}
+            type="Hiking"
             onPress={() => {}}
           />
           <PopularContainer
             name="Semeru Mountain"
             location="Malang, East Java"
             image={require('../../assets/images/home/Semeru.png')}
+            type="Hiking"
             onPress={() => {}}
           />
           <PopularContainer
             name="Semeru Mountain"
             location="Malang, East Java"
             image={require('../../assets/images/home/Semeru.png')}
+            type="Hiking"
             onPress={() => {}}
           />
         </ScrollView>

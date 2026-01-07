@@ -1,15 +1,24 @@
-import { View, Text } from 'react-native';
-import CustomImageBackground from '../../ui-kit/Image/ImageBackground';
+import { ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import styles from './destinationOpsStyle';
+import DestinationPicture from '../../ui-kit/Container/DestinationContainer/DestinationPicture';
 
 const Location = () => {
-    const navigation = useNavigation();
-    return (
-        <View>
-            <CustomImageBackground source={require('../../assets/images/home/Semeru.png')} />
-            <Text>Location</Text>
-        </View>
-    );
+  const navigation = useNavigation();
+  return (
+    <ScrollView style={styles.container}>
+      <DestinationPicture
+        source={require('../../assets/images/home/Semeru.png')}
+        name="Semeru Mountain"
+        location="Malang, East Java"
+        moreImage={require('../../assets/images/home/more.png')}
+        moreText="+5"
+        onPressBack={() => navigation.goBack()}
+        onPressLike={() => {}}
+        onPressMore={() => {}}
+      />
+    </ScrollView>
+  );
 };
 
 export default Location;
