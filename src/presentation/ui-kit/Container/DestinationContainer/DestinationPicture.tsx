@@ -46,7 +46,7 @@ function DestinationPicture({
           </View>
           <TouchableOpacity onPress={onPressMore}>
             <ImageBackground source={moreImage} style={styles.moreImage}>
-              <Text>{moreText}</Text>
+              <Text style={styles.moreText}>{moreText}</Text>
             </ImageBackground>
           </TouchableOpacity>
         </View>
@@ -60,6 +60,8 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 475,
     alignSelf: 'center',
+    overflow: 'hidden',
+    borderRadius: 20,
   },
   topContainer: {
     flexDirection: 'row',
@@ -105,7 +107,7 @@ const styles = StyleSheet.create({
   moreImage: {
     width: 80,
     height: 80,
-    borderRadius: 10,
+    borderRadius: 0,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',

@@ -9,6 +9,9 @@ import PromoContainer from '../../ui-kit/Container/HomeContainer/PromoContainer'
 import Location from '../../ui-kit/Container/HomeContainer/Location';
 import Article from '../../ui-kit/Container/HomeContainer/Article';
 import { useNavigation } from '@react-navigation/native';
+import { moderateScale } from 'react-native-size-matters';
+
+const Component = () => <View style={{ padding: moderateScale(5) }}/>;
 
 function Home() {
   const navigation = useNavigation();
@@ -86,6 +89,8 @@ function Home() {
             type="Hiking"
             onPress={() => {}}
           />
+          <Component/>
+          
         </ScrollView>
       </View>
       <View>
