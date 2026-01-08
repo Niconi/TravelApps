@@ -4,6 +4,7 @@ import {
   ImageBackground,
   StyleSheet,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 type DestinationPictureProps = {
   source: any;
@@ -33,16 +34,21 @@ function DestinationPicture({
           <TouchableOpacity
             onPress={onPressBack}
             style={styles.back}
-          ></TouchableOpacity>
+          >
+            <Image source={require('../../../assets/images/home/Back.png')} style={{width: 24, height: 24}} />
+          </TouchableOpacity>
           <TouchableOpacity
             onPress={onPressLike}
             style={styles.like}
-          ></TouchableOpacity>
+          > <Image source={require('../../../assets/images/home/wishlist.png')} style={{width: 24, height: 24}} /></TouchableOpacity>
         </View>
         <View style={styles.bottomContainer}>
           <View style={styles.textContainer}>
             <Text style={styles.name}>{name}</Text>
-            <Text style={styles.location}>{location}</Text>
+            <View style={styles.locationContainer}>
+              <Image source={require('../../../assets/images/home/location.png')} style={styles.locationIcon} />
+              <Text style={styles.location}>{location}</Text>
+            </View>
           </View>
           <TouchableOpacity onPress={onPressMore}>
             <ImageBackground source={moreImage} style={styles.moreImage}>
@@ -57,17 +63,18 @@ function DestinationPicture({
 
 const styles = StyleSheet.create({
   imageBackground: {
-    width: '100%',
+    width: 380,
     height: 475,
     alignSelf: 'center',
     overflow: 'hidden',
     borderRadius: 20,
+    marginTop: 15,
   },
   topContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 53,
+    marginTop: 30,
     marginHorizontal: 21,
   },
   bottomContainer: {
@@ -75,13 +82,22 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginHorizontal: 15,
-    marginTop: 275,
+    marginTop: 300,
   },
   textContainer: {},
   name: {
     fontSize: 24,
     fontWeight: 'semibold',
     color: 'white',
+  },
+  locationContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+  },
+  locationIcon: {
+    width: 12,
+    height: 12,
   },
   location: {
     fontSize: 14,
@@ -107,7 +123,7 @@ const styles = StyleSheet.create({
   moreImage: {
     width: 80,
     height: 80,
-    borderRadius: 0,
+    borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',

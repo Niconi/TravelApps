@@ -1,4 +1,4 @@
-import { ScrollView } from 'react-native';
+import { ScrollView, View} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from './destinationOpsStyle';
 import DestinationPicture from '../../ui-kit/Container/DestinationContainer/DestinationPicture';
@@ -17,6 +17,7 @@ const Location = () => {
         onPressLike={() => {}}
         onPressMore={() => {}}
       />
+      <View></View>
     </ScrollView>
   );
 };

@@ -29,6 +29,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
     marginTop: 20,
   },
+  scrollView:{
+    gap: 20,
+  },
   //Text
   headerText: {
     fontSize: 12,

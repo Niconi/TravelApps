@@ -11,7 +11,7 @@ import Article from '../../ui-kit/Container/HomeContainer/Article';
 import { useNavigation } from '@react-navigation/native';
 import { moderateScale } from 'react-native-size-matters';
 
-const Component = () => <View style={{ padding: moderateScale(5) }}/>;
+const Component = () => <View style={{ padding: moderateScale(5) }} />;
 
 function Home() {
   const navigation = useNavigation();
@@ -53,7 +53,9 @@ function Home() {
           horizontal
           showsHorizontalScrollIndicator={false}
           bounces={false}
+          contentContainerStyle={styles.scrollView}
         >
+          <Component />
           <PopularContainer
             name="Semeru Mountain"
             location="Malang, East Java"
@@ -89,8 +91,7 @@ function Home() {
             type="Hiking"
             onPress={() => {}}
           />
-          <Component/>
-          
+          <Component />
         </ScrollView>
       </View>
       <View>
@@ -154,7 +155,9 @@ function Home() {
           horizontal
           showsHorizontalScrollIndicator={false}
           bounces={false}
+          contentContainerStyle={styles.scrollView}
         >
+          <Component />
           <Location
             source={require('../../assets/images/home/CentralJava.png')}
             onPress={() => {}}
@@ -167,6 +170,7 @@ function Home() {
             source={require('../../assets/images/home/CentralJava.png')}
             onPress={() => {}}
           />
+          <Component />
         </ScrollView>
       </View>
       <View>
@@ -178,7 +182,9 @@ function Home() {
           horizontal
           showsHorizontalScrollIndicator={false}
           bounces={false}
+          contentContainerStyle={styles.scrollView}
         >
+          <Component />
           <Article
             source={require('../../assets/images/home/MerapiMountArticle.png')}
             name="Merapi Mountain erupt again"
@@ -200,6 +206,7 @@ function Home() {
             date="9 Dec 2023"
             onPress={() => {}}
           />
+          <Component />
         </ScrollView>
       </View>
     </ScrollView>
