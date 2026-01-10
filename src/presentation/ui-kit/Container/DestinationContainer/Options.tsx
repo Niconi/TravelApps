@@ -8,7 +8,7 @@ type OptionsProps = {
 function Options({ title, icon }: OptionsProps) {
   return (
     <View style={styles.container}>
-      <Image source={icon} style={styles.image} />
+      {icon && <Image source={icon} style={styles.image} />}
       <Text style={styles.text}>{title}</Text>
     </View>
   );
