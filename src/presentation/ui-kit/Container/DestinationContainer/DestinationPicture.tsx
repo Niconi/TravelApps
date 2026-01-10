@@ -31,22 +31,27 @@ function DestinationPicture({
     <View>
       <ImageBackground source={source} style={styles.imageBackground}>
         <View style={styles.topContainer}>
-          <TouchableOpacity
-            onPress={onPressBack}
-            style={styles.back}
-          >
-            <Image source={require('../../../assets/images/home/Back.png')} style={{width: 24, height: 24}} />
+          <TouchableOpacity onPress={onPressBack} style={styles.back}>
+            <Image
+              source={require('../../../assets/images/home/Back.png')}
+              style={{ width: 24, height: 24 }}
+            />
           </TouchableOpacity>
-          <TouchableOpacity
-            onPress={onPressLike}
-            style={styles.like}
-          > <Image source={require('../../../assets/images/home/wishlist.png')} style={{width: 24, height: 24}} /></TouchableOpacity>
+          <TouchableOpacity onPress={onPressLike} style={styles.like}>
+            <Image
+              source={require('../../../assets/images/home/wishlist.png')}
+              style={{ width: 24, height: 24 }}
+            />
+          </TouchableOpacity>
         </View>
         <View style={styles.bottomContainer}>
           <View style={styles.textContainer}>
             <Text style={styles.name}>{name}</Text>
             <View style={styles.locationContainer}>
-              <Image source={require('../../../assets/images/home/location.png')} style={styles.locationIcon} />
+              <Image
+                source={require('../../../assets/images/home/location.png')}
+                style={styles.locationIcon}
+              />
               <Text style={styles.location}>{location}</Text>
             </View>
           </View>
