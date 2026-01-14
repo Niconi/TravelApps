@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, FlatList } from 'react-native';
 import styles from './homeStyle';
 import ButtonIcon from '../../ui-kit/Button/ButtonIcon/ButtonIcon';
 import TextInput from '../../ui-kit/TextInput/TextInput';
@@ -10,6 +10,10 @@ import Location from '../../ui-kit/Container/HomeContainer/Location';
 import Article from '../../ui-kit/Container/HomeContainer/Article';
 import { useNavigation } from '@react-navigation/native';
 import { moderateScale } from 'react-native-size-matters';
+import homeDestinationData from '../../../data/homeDestinationData';
+import homeRecommendedData from '../../../data/homeRecommended';
+import homeLocationData from '../../../data/homeLocation';
+import homeArticleData from '../../../data/homeArticle';
 
 const Component = () => <View style={{ padding: moderateScale(5) }} />;
 
@@ -49,86 +53,50 @@ function Home() {
           <Text style={styles.titleText}>Popular Nearby</Text>
           <TouchableText label="See All" onPress={() => {}} align="flex-end" />
         </View>
-        <ScrollView
+        <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
           bounces={false}
           contentContainerStyle={styles.scrollView}
-        >
-          <Component />
-          <PopularContainer
-            name="Semeru Mountain"
-            location="Malang, East Java"
-            image={require('../../assets/images/home/Semeru.png')}
-            type="Hiking"
-            onPress={() => navigation.navigate('DestinationOpsStack')}
-          />
-          <PopularContainer
-            name="Semeru Mountain"
-            location="Malang, East Java"
-            image={require('../../assets/images/home/Semeru.png')}
-            type="Hiking"
-            onPress={() => {}}
-          />
-          <PopularContainer
-            name="Semeru Mountain"
-            location="Malang, East Java"
-            image={require('../../assets/images/home/Semeru.png')}
-            type="Hiking"
-            onPress={() => {}}
-          />
-          <PopularContainer
-            name="Semeru Mountain"
-            location="Malang, East Java"
-            image={require('../../assets/images/home/Semeru.png')}
-            type="Hiking"
-            onPress={() => {}}
-          />
-          <PopularContainer
-            name="Semeru Mountain"
-            location="Malang, East Java"
-            image={require('../../assets/images/home/Semeru.png')}
-            type="Hiking"
-            onPress={() => {}}
-          />
-          <Component />
-        </ScrollView>
+          ItemSeparatorComponent={<Component />}
+          data={homeDestinationData}
+          renderItem={({ item }) => (
+            <View>
+              <PopularContainer
+                name={item.destinationName}
+                location={item.destinationLocation}
+                image={item.destinationImage}
+                type={item.type}
+                onPress={() => navigation.navigate('DestinationOpsStack')}
+              />
+            </View>
+          )}
+          keyExtractor={item => item.id.toString()}
+        />
       </View>
       <View>
         <View style={styles.titleTextContainer}>
           <Text style={styles.titleText}>Recommended</Text>
           <TouchableText label="See All" onPress={() => {}} align="flex-end" />
         </View>
-        <ScrollView bounces={false}>
-          <RecommendedContainer
-            name="Kerinci Mountain"
-            type="Hiking"
-            location="Solok, Jambi"
-            image={require('../../assets/images/home/Kerinci.png')}
-            onPress={() => {}}
-          />
-          <RecommendedContainer
-            name="Kerinci Mountain"
-            type="Hiking"
-            location="Solok, Jambi"
-            image={require('../../assets/images/home/Kerinci.png')}
-            onPress={() => {}}
-          />
-          <RecommendedContainer
-            name="Kerinci Mountain"
-            type="Hiking"
-            location="Solok, Jambi"
-            image={require('../../assets/images/home/Kerinci.png')}
-            onPress={() => {}}
-          />
-          <RecommendedContainer
-            name="Kerinci Mountain"
-            type="Hiking"
-            location="Solok, Jambi"
-            image={require('../../assets/images/home/Kerinci.png')}
-            onPress={() => {}}
-          />
-        </ScrollView>
+        <FlatList
+          showsHorizontalScrollIndicator={false}
+          bounces={false}
+          contentContainerStyle={{ paddingTop: 10 }}
+          data={homeRecommendedData}
+          renderItem={({ item }) => (
+            <View>
+              <RecommendedContainer
+                name={item.name}
+                type={item.type}
+                location={item.location}
+                image={item.image}
+                onPress={() => navigation.navigate('DestinationOpsStack')}
+              />
+            </View>
+          )}
+          keyExtractor={item => item.id.toString()}
+        />
       </View>
       <View>
         <View style={styles.titleTextContainer}>
@@ -151,63 +119,46 @@ function Home() {
           <Text style={styles.titleText}>Location</Text>
           <TouchableText label="See All" onPress={() => {}} align="flex-end" />
         </View>
-        <ScrollView
+        <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
+          ItemSeparatorComponent={<Component />}
           bounces={false}
           contentContainerStyle={styles.scrollView}
-        >
-          <Component />
-          <Location
-            source={require('../../assets/images/home/CentralJava.png')}
-            onPress={() => {}}
-          />
-          <Location
-            source={require('../../assets/images/home/CentralJava.png')}
-            onPress={() => {}}
-          />
-          <Location
-            source={require('../../assets/images/home/CentralJava.png')}
-            onPress={() => {}}
-          />
-          <Component />
-        </ScrollView>
+          data={homeLocationData}
+          renderItem={({ item }) => (
+            <View>
+              <Location source={item.image} onPress={() => {}} />
+            </View>
+          )}
+          keyExtractor={item => item.id.toString()}
+        />
       </View>
       <View>
         <View style={styles.titleTextContainer}>
           <Text style={styles.titleText}>Article</Text>
           <TouchableText label="See All" onPress={() => {}} align="flex-end" />
         </View>
-        <ScrollView
+        <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
+          ItemSeparatorComponent={<Component />}
           bounces={false}
           contentContainerStyle={styles.scrollView}
-        >
-          <Component />
-          <Article
-            source={require('../../assets/images/home/MerapiMountArticle.png')}
-            name="Merapi Mountain erupt again"
-            author="Adams"
-            date="9 Dec 2023"
-            onPress={() => {}}
-          />
-          <Article
-            source={require('../../assets/images/home/MerapiMountArticle.png')}
-            name="Merapi Mountain erupt again"
-            author="Adams"
-            date="9 Dec 2023"
-            onPress={() => {}}
-          />
-          <Article
-            source={require('../../assets/images/home/MerapiMountArticle.png')}
-            name="Merapi Mountain erupt again"
-            author="Adams"
-            date="9 Dec 2023"
-            onPress={() => {}}
-          />
-          <Component />
-        </ScrollView>
+          data={homeArticleData}
+          renderItem={({ item }) => (
+            <View>
+              <Article
+                source={item.image}
+                name={item.title}
+                author={item.author}
+                date={item.date}
+                onPress={() => {}}
+              />
+            </View>
+          )}
+          keyExtractor={item => item.id.toString()}
+        />
       </View>
     </ScrollView>
   );

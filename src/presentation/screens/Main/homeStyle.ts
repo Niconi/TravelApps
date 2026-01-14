@@ -18,19 +18,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 20,
   },
-  popularTextContainer:{
+  popularTextContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: 30,
   },
-  titleTextContainer:{
+  titleTextContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: 30,
     marginTop: 20,
   },
-  scrollView:{
-    gap: 20,
+  scrollView: {
+    paddingHorizontal: 30,
   },
   //Text
   headerText: {
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     marginHorizontal: 15,
   },
-  recommendedLocation:{
+  recommendedLocation: {
     fontSize: 10,
     fontWeight: 'light',
     marginBottom: 23,

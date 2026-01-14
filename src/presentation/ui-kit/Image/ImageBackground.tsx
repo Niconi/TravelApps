@@ -28,7 +28,10 @@ const CustomImageBackground = ({
 };
 
 const styles = StyleSheet.create({
-  imageBackground: {},
+  imageBackground: {
+    borderRadius: 20,
+    overflow: 'hidden',
+  },
   textContainer: {
     width: 52,
     height: 21,

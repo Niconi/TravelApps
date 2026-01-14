@@ -1,16 +1,26 @@
-import { Image, Text, View, StyleSheet } from 'react-native';
+import { Image, Text, StyleSheet, Pressable } from 'react-native';
 
 type OptionsProps = {
   title: string;
   icon?: any;
+  onPress: () => void;
+  active?: boolean;
 };
 
-function Options({ title, icon }: OptionsProps) {
+function Options({ title, icon, onPress, active = false }: OptionsProps) {
   return (
-    <View style={styles.container}>
+    <Pressable
+      style={[
+        styles.container,
+        active ? styles.activeContainer : styles.defaultContainer,
+      ]}
+      onPress={onPress}
+    >
       {icon && <Image source={icon} style={styles.image} />}
-      <Text style={styles.text}>{title}</Text>
-    </View>
+      <Text style={active ? styles.activeText : styles.defaultText}>
+        {title}
+      </Text>
+    </Pressable>
   );
 }
 
@@ -24,15 +34,26 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 5,
   },
+  defaultContainer: {
+    backgroundColor: 'white',
+  },
+  activeContainer: {
+    backgroundColor: 'black',
+  },
   image: {
     width: 14,
     height: 14,
     marginRight: 5,
   },
-  text: {
+  defaultText: {
     fontSize: 10,
     fontWeight: 'light',
     color: 'black',
+  },
+  activeText: {
+    fontSize: 10,
+    fontWeight: 'light',
+    color: 'white',
   },
 });
 
